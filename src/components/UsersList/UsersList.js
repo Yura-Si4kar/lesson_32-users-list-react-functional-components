@@ -24,4 +24,3 @@ export default function UsersList({list, deleteItem, editItem}) {
         </table>
     )
 }
-

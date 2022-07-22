@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
+const INITIAL_VALUE = {
+    name: '',
+    surname: '',
+    email: '',
+    error: false,
+}
 
 export default function UsersForm({onAddUsers}) {
-    const[formState, setFormState] = useState({
-        name: '',
-        surname: '',
-        email: '',
-        error: false,
-    })
+    const[formState, setFormState] = useState(INITIAL_VALUE)
 
     return (
         <form className='input_block form' onSubmit={formSubmit}>
@@ -61,11 +62,7 @@ export default function UsersForm({onAddUsers}) {
 
         onAddUsers(formState);
 
-        setFormState({
-            name: '',
-            surname: '',
-            email:'',
-        })
+        setFormState(INITIAL_VALUE)
     }
 
     function validateFilds(input) {
